@@ -1,0 +1,8 @@
+.post-media {
+    width: 100%;
+    max-height: 320px; // ✅ slightly bigger than feed
+    object-fit: cover;
+    border-radius: 14px;
+    margin-top: 14px;
+    display: block;
+}

@@ -1,0 +1,53 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/tabs/tab1"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Post Details 💖</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <!-- if post not found -->
+    <div *ngIf="!post" class="empty">
+        <ion-icon name="alert-circle-outline"></ion-icon>
+        <h2>Post not found</h2>
+        <p>Go back and open a post again.</p>
+        <ion-button routerLink="/tabs/tab1" expand="block">Back to Feed</ion-button>
+    </div>
+
+    <!-- post -->
+    <ion-card *ngIf="post" class="details-card">
+        <!-- Media -->
+        <div class="media" *ngIf="post.mediaType !== 'none' && post.mediaSrc">
+            <img *ngIf="post.mediaType === 'image'" [src]="post.mediaSrc" alt="Post image" />
+            <video *ngIf="post.mediaType === 'video'" [src]="post.mediaSrc" controls muted playsinline></video>
+        </div>
+
+        <ion-card-header>
+            <ion-card-subtitle>By {{ post.author }}</ion-card-subtitle>
+            <ion-card-title>{{ post.title }}</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+            <p class="desc">{{ post.description }}</p>
+
+            <div class="chips">
+                <ion-chip color="light">
+                    <ion-icon name="sparkles-outline"></ion-icon>
+                    <ion-label>Glow Tip</ion-label>
+                </ion-chip>
+
+                <ion-chip [color]="isFav ? 'danger' : 'medium'">
+                    <ion-icon [name]="isFav ? 'heart' : 'heart-outline'"></ion-icon>
+                    <ion-label>{{ isFav ? 'Favourite' : 'Not saved' }}</ion-label>
+                </ion-chip>
+            </div>
+
+            <ion-button expand="block" class="fav-btn" (click)="toggleFav()">
+                <ion-icon slot="start" [name]="isFav ? 'heart' : 'heart-outline'"></ion-icon>
+                {{ isFav ? 'Remove from favourites' : 'Save to favourites' }}
+            </ion-button>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

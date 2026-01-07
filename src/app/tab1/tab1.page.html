@@ -1,17 +1,30 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+    <div class="top-card">
+      <div class="left">
+        <div class="app-name">SELF GLOW</div>
+        <div class="tagline">Find, save & manage your skincare favourites</div>
+      </div>
+
+      <div class="right">
+        <div class="status-label">Status</div>
+        <div class="status-pill" [class.on]="(isOnline$ | async)">
+          {{ (isOnline$ | async) ? 'Online' : 'Offline' }}
+        </div>
+      </div>
+    </div>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+<ion-content class="ion-padding">
+  <div class="grid-wrap">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" size-md="4" *ngFor="let p of posts">
+          <app-post-card [post]="p" (fav)="toggleFavourite($event)" (edit)="goEdit($event)"
+            (del)="confirmDelete($event)"></app-post-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 </ion-content>

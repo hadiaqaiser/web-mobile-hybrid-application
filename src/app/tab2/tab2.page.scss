@@ -1,0 +1,118 @@
+:host {
+    --bg: #07070b;
+    --card: rgba(10, 10, 14, .90);
+    --stroke: rgba(255, 79, 184, .22);
+    --text: rgba(255, 255, 255, .92);
+    --muted: rgba(255, 255, 255, .65);
+    --pink: #ff4fb8;
+}
+
+ion-content {
+    --background: radial-gradient(1200px 500px at 20% -10%, rgba(255, 79, 184, .18), transparent 55%),
+        radial-gradient(900px 600px at 85% 0%, rgba(180, 80, 255, .14), transparent 55%),
+        var(--bg);
+}
+
+/* Top highlighted header (same vibe as Tab1) */
+.top-card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 16px;
+    border-radius: 16px;
+    border: 1px solid var(--stroke);
+    background: rgba(10, 10, 14, .88);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, .55);
+}
+
+.left {
+    text-align: center;
+}
+
+.app-name {
+    font-size: 20px;
+    font-weight: 950;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+.tagline {
+    margin-top: 4px;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* One big form section card */
+.form-card {
+    border-radius: 18px;
+    border: 1px solid var(--stroke);
+    background: var(--card);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, .55);
+    padding: 14px;
+}
+
+.field {
+    --background: transparent;
+    border-radius: 14px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(255, 255, 255, .06);
+    background: rgba(255, 255, 255, .03);
+}
+
+.media-box {
+    margin-top: 6px;
+}
+
+.btn-row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px 0 6px;
+}
+
+.pink-btn {
+    --background: var(--pink);
+    --color: #111;
+    font-weight: 800;
+    border-radius: 14px;
+}
+
+.outline-btn {
+    --border-color: rgba(255, 79, 184, .55);
+    --color: #fff;
+    border-radius: 14px;
+}
+
+.preview-card {
+    margin-top: 12px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 79, 184, .18);
+    background: rgba(0, 0, 0, .25);
+}
+
+.preview-card img,
+.preview-card video {
+    width: 100%;
+    max-height: 240px;
+    object-fit: cover;
+    display: block;
+}
+
+.actions {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.danger-outline {
+    --border-color: rgba(255, 80, 80, .55);
+    --color: #fff;
+    border-radius: 14px;
+}
+
+.clear-btn {
+    color: rgba(255, 255, 255, .70);
+}

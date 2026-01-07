@@ -35,3 +35,148 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+/* ===== GlowGirl Dark Theme ===== */
+ion-app,
+ion-content {
+    --ion-background-color: #0b0b12;
+}
+
+ion-toolbar {
+    --background: rgba(11, 11, 18, 0.92);
+    --color: #fff;
+    border-bottom: 1px solid rgba(255, 79, 184, 0.18);
+}
+
+ion-title {
+    font-weight: 900;
+    letter-spacing: 0.2px;
+}
+
+/* Tabs */
+ion-tab-bar {
+    --background: rgba(11, 11, 18, 0.95);
+    border-top: 1px solid rgba(255, 79, 184, 0.18);
+}
+
+ion-tab-button {
+    --color: rgba(255, 255, 255, 0.55);
+    --color-selected: #ff4fb8;
+}
+
+/* Small “Online” chip look (if you keep it) */
+ion-chip,
+ion-badge {
+    --background: rgba(255, 79, 184, 0.14);
+    --color: #ffb3df;
+}
+
+/* Force dark background everywhere */
+html,
+body,
+ion-app,
+ion-router-outlet,
+ion-content {
+    background: #0b0b12 !important;
+    --background: #0b0b12 !important;
+}
+
+/* Header */
+ion-toolbar {
+    border-bottom: 1px solid rgba(255, 79, 184, 0.25);
+}
+
+/* Tabs */
+ion-tab-bar {
+    border-top: 1px solid rgba(255, 79, 184, 0.25);
+}
+
+/* Grid spacing */
+ion-grid {
+    padding-bottom: 80px;
+}
+
+/* ============ GlowGirl Global Dark Theme ============ */
+:root {
+    --gg-bg: #07070c;
+    --gg-panel: rgba(18, 18, 28, 0.78);
+    --gg-stroke: rgba(255, 79, 184, 0.22);
+    --gg-pink: #ff4fb8;
+    --gg-pink-soft: rgba(255, 79, 184, 0.14);
+    --gg-text: rgba(255, 255, 255, 0.92);
+    --gg-muted: rgba(255, 255, 255, 0.66);
+}
+
+html,
+body,
+ion-app,
+ion-router-outlet,
+ion-content {
+    background: var(--gg-bg) !important;
+    --background: var(--gg-bg) !important;
+    color: var(--gg-text);
+}
+
+/* Toolbars */
+ion-header ion-toolbar {
+    --background: rgba(9, 9, 14, 0.92) !important;
+    --color: #fff !important;
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--gg-stroke);
+}
+
+ion-title {
+    font-weight: 900;
+    letter-spacing: 0.3px;
+}
+
+/* Tabs */
+ion-tab-bar {
+    --background: rgba(9, 9, 14, 0.92) !important;
+    border-top: 1px solid var(--gg-stroke);
+    backdrop-filter: blur(14px);
+}
+
+ion-tab-button {
+    --color: rgba(255, 255, 255, 0.45);
+    --color-selected: var(--gg-pink);
+}
+
+/* Inputs look premium */
+ion-item {
+    --background: transparent;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --highlight-color-focused: var(--gg-pink);
+}
+
+ion-input,
+ion-textarea,
+ion-select {
+    --color: rgba(255, 255, 255, 0.92);
+    --placeholder-color: rgba(255, 255, 255, 0.35);
+}
+
+ion-button {
+    text-transform: none;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+}
+
+ion-button[color="primary"] {
+    --background: var(--gg-pink);
+    --background-hover: #ff6bc6;
+    --background-activated: #ff6bc6;
+    --color: #0b0b12;
+}
+
+/* Slight page padding & spacing */
+ion-content.ion-padding {
+    --padding-top: 14px;
+    --padding-bottom: 90px;
+}
+
+/* Nice scroll */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

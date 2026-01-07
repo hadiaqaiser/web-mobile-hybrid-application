@@ -1,0 +1,34 @@
+<ion-card class="post-card" [appPinkGlow]="!!post.isFavourite">
+  <ion-card-header>
+    <ion-card-subtitle>{{ post.author }}</ion-card-subtitle>
+    <ion-card-title>{{ post.title }}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <p>{{ post.description }}</p>
+
+    <img *ngIf="post.mediaType === 'image' && post.mediaSrc" class="post-media" [src]="post.mediaSrc" />
+    <video *ngIf="post.mediaType === 'video' && post.mediaSrc" class="post-media" [src]="post.mediaSrc" controls muted
+      playsinline></video>
+  </ion-card-content>
+
+  <div class="actions">
+    <ion-button fill="clear" [routerLink]="['/details', post.id]" (click)="$event.stopPropagation()">
+      <ion-icon slot="icon-only" name="eye-outline"></ion-icon>
+    </ion-button>
+
+    <div class="right-actions">
+      <ion-button fill="clear" (click)="$event.stopPropagation(); fav.emit(post.id)">
+        <ion-icon slot="icon-only" [name]="post.isFavourite ? 'heart' : 'heart-outline'"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear" (click)="$event.stopPropagation(); edit.emit(post.id)">
+        <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear" color="danger" (click)="$event.stopPropagation(); del.emit(post.id)">
+        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+</ion-card>

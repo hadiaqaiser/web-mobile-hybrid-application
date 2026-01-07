@@ -1,0 +1,36 @@
+.post-card {
+  border-radius: 18px;
+  border: 1px solid rgba(255, 79, 184, 0.22);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  background: var(--gg-surface);
+}
+
+ion-card-subtitle {
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 700;
+}
+
+ion-card-title {
+  color: #ffffff;
+  font-weight: 900;
+}
+
+ion-card-content p {
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.5;
+}
+
+.post-media {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-top: 12px;
+}
+
+.actions {
+  background: rgba(255, 79, 184, 0.06);
+  border-top: 1px solid rgba(255, 79, 184, 0.14);
+  padding-top: 6px;
+}

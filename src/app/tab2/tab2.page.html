@@ -1,17 +1,91 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <div class="top-card">
+      <div class="left">
+        <div class="app-name">{{ editingId ? 'EDIT POST' : 'ADD POST' }}</div>
+        <div class="tagline">Create and save your skincare post (with media).</div>
+      </div>
+    </div>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <div class="form-card">
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+    <ion-item class="field" lines="none">
+      <ion-input label="Title" labelPlacement="stacked" [(ngModel)]="title"></ion-input>
+    </ion-item>
+
+    <ion-item class="field" lines="none">
+      <ion-textarea label="Description" labelPlacement="stacked" autoGrow="true"
+        [(ngModel)]="description"></ion-textarea>
+    </ion-item>
+
+    <ion-item class="field" lines="none">
+      <ion-input label="Author" labelPlacement="stacked" [(ngModel)]="author"></ion-input>
+    </ion-item>
+
+    <ion-item class="field" lines="none">
+      <ion-select label="Media Type" labelPlacement="stacked" [(ngModel)]="mediaType">
+        <ion-select-option value="none">None</ion-select-option>
+        <ion-select-option value="image">Image (URL / Camera / Gallery)</ion-select-option>
+        <ion-select-option value="video">Video URL</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!-- IMAGE -->
+    <div *ngIf="mediaType === 'image'" class="media-box">
+      <div class="btn-row">
+        <ion-button expand="block" class="pink-btn" (click)="pickFromGallery()">
+          Choose from Gallery
+        </ion-button>
+
+        <ion-button expand="block" fill="outline" class="outline-btn" (click)="takePhoto()">
+          Take Photo
+        </ion-button>
+      </div>
+
+      <!-- hidden inputs for WEB fallback -->
+      <input #galleryInput type="file" accept="image/*" style="display:none" (change)="onWebFilePicked($event)" />
+      <input #cameraInput type="file" accept="image/*" capture="environment" style="display:none"
+        (change)="onWebFilePicked($event)" />
+
+      <ion-item class="field" lines="none">
+        <ion-input label="Image URL (optional)" labelPlacement="stacked" placeholder="https://..."
+          [(ngModel)]="mediaSrc"></ion-input>
+      </ion-item>
+
+      <ion-card *ngIf="photoPreview || mediaSrc" class="preview-card">
+        <img [src]="photoPreview || mediaSrc" />
+      </ion-card>
+    </div>
+
+    <!-- VIDEO -->
+    <div *ngIf="mediaType === 'video'" class="media-box">
+      <ion-item class="field" lines="none">
+        <ion-input label="Video URL" labelPlacement="stacked" placeholder="https://..."
+          [(ngModel)]="mediaSrc"></ion-input>
+      </ion-item>
+
+      <ion-card *ngIf="mediaSrc" class="preview-card">
+        <video [src]="mediaSrc" controls muted playsinline></video>
+      </ion-card>
+    </div>
+
+    <div class="actions">
+      <ion-button expand="block" class="pink-btn" (click)="save()">
+        {{ editingId ? 'Update' : 'Post' }}
+      </ion-button>
+
+      <ion-button *ngIf="editingId" expand="block" color="danger" fill="outline" class="danger-outline"
+        (click)="deletePost()">
+        Delete
+      </ion-button>
+
+      <ion-button *ngIf="mediaType !== 'none'" expand="block" fill="clear" class="clear-btn" (click)="clearMedia()">
+        Clear Media
+      </ion-button>
+    </div>
+
+  </div>
 </ion-content>

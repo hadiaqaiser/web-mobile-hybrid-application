@@ -1,2 +1,26 @@
-// For information on how to create your own theme, please refer to:
-// https://ionicframework.com/docs/theming/
+/* GlowGirl – Black & Pink Theme */
+
+:root {
+    /* Base colors */
+    --ion-background-color: #0b0b12;
+    --ion-text-color: #ffffff;
+
+    /* Primary (Pink) */
+    --ion-color-primary: #ff4fb8;
+    --ion-color-primary-rgb: 255, 79, 184;
+    --ion-color-primary-contrast: #000000;
+
+    /* Toolbar */
+    --ion-toolbar-background: #0b0b12;
+    --ion-toolbar-color: #ffffff;
+
+    /* Tabs */
+    --ion-tab-bar-background: #0b0b12;
+    --ion-tab-bar-color: rgba(255, 255, 255, 0.5);
+    --ion-tab-bar-color-selected: #ff4fb8;
+
+    /* Cards */
+    --ion-card-background: linear-gradient(180deg,
+            #12121c,
+            #0b0b12);
+}

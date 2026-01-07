@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab1"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Post Details ✨</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" *ngIf="post">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>{{ post.author }}</ion-card-subtitle>
+      <ion-card-title>{{ post.title }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>{{ post.description }}</p>
+
+      <!-- IMAGE -->
+      <img *ngIf="post.mediaType === 'image' && post.mediaSrc" class="post-media" [src]="post.mediaSrc" />
+
+      <!-- VIDEO -->
+      <video *ngIf="post.mediaType === 'video' && post.mediaSrc" class="post-media" [src]="post.mediaSrc" controls muted
+        playsinline></video>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

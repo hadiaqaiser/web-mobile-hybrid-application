@@ -1,0 +1,139 @@
+/* GlowGirl feed background */
+:host {
+    display: block;
+}
+
+ion-content {
+    --background: radial-gradient(900px 500px at 30% 0%,
+            rgba(255, 79, 184, 0.18),
+            transparent 55%),
+        radial-gradient(900px 500px at 85% 10%,
+            rgba(146, 88, 255, 0.12),
+            transparent 60%),
+        #07070c;
+}
+
+ion-toolbar ion-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.top-card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 14px 16px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 79, 184, .22);
+    background: rgba(10, 10, 14, .88);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, .55);
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.app-name {
+    font-size: 20px;
+    font-weight: 950;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+.tagline {
+    font-size: 12px;
+    color: rgba(255, 255, 255, .65);
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.status-label {
+    font-size: 12px;
+    color: rgba(255, 255, 255, .6);
+}
+
+.status-pill {
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 79, 184, .28);
+    background: rgba(255, 79, 184, .10);
+    color: #fff;
+}
+
+.status-pill.on {
+    border-color: rgba(90, 255, 170, .35);
+    background: rgba(90, 255, 170, .12);
+}
+
+
+.grid-wrap {
+    padding-top: 8px;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 14px;
+    padding: 6px 2px;
+}
+
+.brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(255, 79, 184, 0.18);
+    background: rgba(255, 79, 184, 0.06);
+    padding: 6px 10px;
+    border-radius: 999px;
+    backdrop-filter: blur(12px);
+    white-space: nowrap;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.06);
+}
+
+.dot.on {
+    background: #21c55d;
+    box-shadow: 0 0 10px rgba(33, 197, 93, 0.35);
+}
+
+.txt {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.status-badge {
+    background: rgba(255, 79, 184, 0.15);
+    border: 1px solid rgba(255, 79, 184, 0.3);
+    color: #fff;
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 999px;
+}

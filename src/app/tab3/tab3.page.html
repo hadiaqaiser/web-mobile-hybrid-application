@@ -1,17 +1,33 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
+<ion-header>
+  <ion-toolbar class="sg-toolbar">
+    <ion-title class="sg-title">Favourites</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="sg-page ion-padding">
+  <!-- highlighted section (like tab1 style) -->
+  <div class="sg-section">
+    <div class="sg-section-header">
+      <div class="sg-section-title">Saved Skincare</div>
+      <div class="sg-section-subtitle">Your favourite posts in one place.</div>
+    </div>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+    <div *ngIf="favs.length === 0" class="sg-empty">
+      No favourites yet.
+    </div>
+
+    <div *ngIf="favs.length > 0" class="sg-grid">
+      <ion-card class="fav-card" *ngFor="let p of favs" [routerLink]="['/details', p.id]">
+        <ion-card-header>
+          <ion-card-subtitle>{{ p.author }}</ion-card-subtitle>
+          <ion-card-title>{{ p.title }}</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <p class="fav-desc">{{ p.description }}</p>
+          <div class="fav-hint">Tap to view details</div>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
 </ion-content>
