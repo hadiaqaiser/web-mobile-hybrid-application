@@ -1,85 +1,39 @@
-Student Information
-•	Name: Hadia Qaiser
-•	Student ID: 20069602
-•	Course: MSc Information Systems
-•	Module Title: Web and Mobile Technologies
-•	Module Code: B9IS126
-•	Module Leader: Ehtisham Yasin
-•	Assessment Title: Develop a Hybrid Mobile Application
-•	Members: Individual
+# GlowGirl Business Systems Mobile Application
 
-1. Project Overview (Hybrid Mobile Application – GlowGirl)
-This project is a hybrid mobile application developed for a business-style concept named GlowGirl. The application allows users to create, view, edit, and delete posts that can include text, images, and media, making it a simple but functional content-based mobile app. The app is touch-friendly, visually clean, and works smoothly on mobile devices.
+A hybrid mobile information system for creating and managing content-based records. The project turns functional requirements into a touch-friendly application with CRUD workflows, persistent local data, device integration, and connectivity monitoring.
 
-2. Technologies Used
-The application was built using the technologies covered in the module:
-•	HTML5 – Structure
-•	CSS – Styling and layout
-•	JavaScript / TypeScript – Logic and functionality
-•	Ionic Framework – UI and mobile components
-•	Angular – Application structure
-•	Capacitor – Native mobile features and deployment
-•	Xcode – iOS build, simulator, and device testing
+## Business and systems focus
 
-3. Platform Implementation
-The application was implemented and tested on:
-•	iOS Simulator
-•	Real iPhone (physical device)
+- Translated functional requirements into application features and user workflows
+- Implemented create, read, update, and delete operations for content records
+- Maintained application data between sessions using local device storage
+- Integrated camera, gallery, and network-status capabilities
+- Tested functionality and usability on an iOS simulator and physical device
+- Documented requirements, application structure, testing, and deployment
 
-4. Plugins Used (Requirement: Minimum TWO)
-The following Capacitor plugins were used and fully implemented:
-1 Camera Plugin
-	•	Capture photos using the device camera
-	•	Select images from the photo gallery
-	•	Used when creating or editing posts
-2️ Preferences Plugin
-	•	Store posts locally on the device
-	•	Maintain app data between sessions
-3 Network plugin
-	•   online/offline status
+## Main features
 
-5. Splash Screen
-•	A custom splash screen was added
-•	Displays when the app launches
-•	Properly configured using Xcode (LaunchScreen.storyboard)
-•	Suitable for iOS devices
+- Create, view, edit, and delete posts
+- Capture photographs or select images from the device gallery
+- Store records locally using Capacitor Preferences
+- Display online and offline network status
+- Mobile navigation, validation messages, and confirmation prompts
+- Custom application icon and splash screen
 
-6. App Icons
-•	Custom app icon added
-•	Correct icon sizes generated
-•	Icon appears on:
-•	iPhone home screen
-•	App switcher
+## Technology
 
-7. Build, Deployment & Testing
-•	App built using Ionic + Capacitor
-•	iOS build prepared using Xcode
-•	Deployed and tested on:
-•	iOS Simulator
-•	Physical iPhone device
-•	Application runs without crashes
+- Angular, Ionic, TypeScript, HTML, and SCSS
+- Capacitor Camera, Preferences, and Network plugins
+- Xcode, iOS Simulator, and physical-device testing
+- Git and GitHub
 
-8. Usability & User Experience
-•	Touch-friendly buttons and inputs
-•	Clean and consistent UI
-•	Tab-based navigation
-•	Clear alerts and confirmations
-•	Error-free interaction flow
+## Run locally
 
-9. Project Structure
-The project follows the correct Ionic + Capacitor structure:
-•	src/ – Application source code
-•	assets/ – Images, icons, splash screen
-•	capacitor.config.ts – Capacitor configuration
-•	ios/ – iOS platform files
-•	package.json – Dependencies
+```bash
+npm install
+ionic serve
+```
 
-10. Conclusion
-This project successfully meets follwoing requirements:
-•	Hybrid mobile application
-•	Minimum two plugins
-•	Splash screen
-•	App icons
-•	Platform build and testing
-•	User-friendly design
-The application demonstrates practical understanding of web and mobile technologies taught in this module.
+For iOS testing, synchronise the Capacitor project and open it in Xcode.
+
+This project demonstrates requirements analysis, process design, data management, software testing, troubleshooting, and technical documentation alongside application development.
